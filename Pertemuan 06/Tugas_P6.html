@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Pembelian Buah</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #c2eeff;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            margin-top: 100px;
+            border: 2px solid #f7f7f7;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            background-color: white;
+        }
+        .input-container {
+            margin-bottom: 20px;
+        }
+        .input-container input[type="text"] {
+            padding: 10px;
+            border: 2px solid #90EE90;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .input-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .data-pembelian {
+            margin-bottom: 20px;
+        }
+        .data-pembelian p {
+            margin: 5px 0;
+        }
+        .data-pembelian span {
+            font-weight: bold;
+        }
+        .data-pembelian .value {
+            margin-left: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #000;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #d3d3d3;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return displayFruitData(event)">
+        <h1 style="text-align: center;">Data Pembelian Buah</h1>
+        <div class="input-container">
+            <input type="text" id="fruitInput" placeholder="Masukkan nama buah....">
+            <button type="submit">Beli</button>
+        </div>
+        <div class="data-pembelian">
+            <p><span>Data Pembelian :</span></p>
+            <p>Nama Buah : <span class="value" id="fruitName">................</span></p>
+            <p>Harga / Kg : <span class="value" id="fruitPrice">................</span></p>
+            <p>Diskon : <span class="value" id="fruitDiscount">................</span></p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama Buah</th>
+                    <th>Harga / Kg</th>
+                    <th>Diskon</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nanas</td>
+                    <td>7.500</td>
+                    <td>5 %</td>
+                </tr>
+                <tr>
+                    <td>Anggur</td>
+                    <td>35.000</td>
+                    <td>15 %</td>
+                </tr>
+                <tr>
+                    <td>Melon</td>
+                    <td>12.500</td>
+                    <td>10 %</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <script>
+        const fruitData = {
+            'Nanas': { price: '7.500', discount: '5 %' },
+            'Anggur': { price: '35.000', discount: '15 %' },
+            'Melon': { price: '12.500', discount: '10 %' }
+        };
+
+        function displayFruitData(event) {
+            event.preventDefault();
+            const fruitInput = document.getElementById('fruitInput').value;
+            const fruitName = document.getElementById('fruitName');
+            const fruitPrice = document.getElementById('fruitPrice');
+            const fruitDiscount = document.getElementById('fruitDiscount');
+
+            if (fruitData[fruitInput]) {
+                fruitName.textContent = fruitInput;
+                fruitPrice.textContent = fruitData[fruitInput].price;
+                fruitDiscount.textContent = fruitData[fruitInput].discount;
+            } else {
+                fruitName.textContent = '................';
+                fruitPrice.textContent = '................';
+                fruitDiscount.textContent = '................';
+                alert('Buah tidak ditemukan');
+            }
+        }
+    </script>
+</body>
+</html>
