@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JQuery Modal dengan Grid Card</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: rgb(178, 201, 221);
+        }
+        h2 {
+            margin: 20px 0;
+        }
+        #modalGambar {
+            width: 500px !important;
+        }
+        #modalDeskripsi {
+            text-align: justify;
+        }
+        .btn-large {
+            font-size: 1.2rem;
+            padding: 5px 30px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">Contoh Pop Up JQuery</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/zzz.png" class="card-img-top" alt="Zenless Zone Zero">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Zenless Zone Zero</h5>
+                        <button class="btn btn-warning btn-large tombol-detail" data-toggle="modal" data-target="#modalBuah" 
+                                data-gambar="assets/zzz.png" 
+                                data-deskripsi="<b>Zenless Zone Zero</b> adalah game action RPG dari miHoYo yang berlatarkan dunia pasca-apokaliptik dengan estetika modern dan penuh gaya. Pemain akan berperan sebagai Proxy, seorang pemandu yang membantu berbagai karakter unik bertarung melawan makhluk misterius bernama Ethereal. Dengan gameplay berbasis hack-and-slash yang dinamis, cerita yang menarik, dan grafis yang penuh warna, game ini menawarkan pengalaman bermain yang memukau dan penuh aksi.">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/eldenring.jpeg" class="card-img-top" alt="Elden Ring">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Elden Ring</h5>
+                        <button class="btn btn-warning btn-large tombol-detail" data-toggle="modal" data-target="#modalBuah" 
+                                data-gambar="assets/eldenring.jpeg" 
+                                data-deskripsi="Dikembangkan oleh FromSoftware dan ditulis bersama oleh George R. R. Martin, <b>Elden Ring</b> adalah sebuah mahakarya game open-world yang dipenuhi tantangan epik. Pemain menjelajahi dunia luas yang disebut The Lands Between, melawan berbagai musuh kuat, dan menyelesaikan misi-misi yang penuh misteri. Game ini terkenal dengan kesulitannya yang menantang, cerita yang dalam, serta kebebasan pemain untuk mengeksplorasi lingkungan yang indah dan gelap.">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/wutheringwaves.jpg" class="card-img-top" alt="Wuthering Waves">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Wuthering Waves</h5>
+                        <button class="btn btn-warning btn-large tombol-detail" data-toggle="modal" data-target="#modalBuah" 
+                                data-gambar="assets/wutheringwaves.jpg" 
+                                data-deskripsi="<b>Wuthering Waves</b> adalah game aksi RPG dengan elemen eksplorasi mendalam dan grafis yang memukau. Game ini membawa pemain ke dunia futuristik yang runtuh, di mana mereka harus mengungkap rahasia masa lalu sambil melawan ancaman baru. Dengan sistem pertarungan yang cepat, karakter unik, dan dunia open-world yang luas, game ini memberikan pengalaman bermain yang penuh petualangan dan emosi.">Selengkapnya</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modalBuah" tabindex="-1" role="dialog" aria-labelledby="modalCard" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCard">Detail</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalGambar" src="" alt="Buah" class="img-thumbnail mb-3">
+                    <p id="modalDeskripsi"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary btn-large" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.tombol-detail').click(function() {
+                const gambar = $(this).data('gambar');
+                const deskripsi = $(this).data('deskripsi');
+                
+                $('#modalGambar').attr('src', gambar);
+                $('#modalDeskripsi').html(deskripsi);
+            });
+        });
+    </script>
+</body>
+</html>
