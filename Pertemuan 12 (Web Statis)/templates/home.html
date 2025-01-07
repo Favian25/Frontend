@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>HoYoverse</title>
+</head>
+<body>
+  <nav>
+    <a href="main">Home</a>
+    <a href="">Contact</a>
+    <a href="">About Me</a>
+  </nav>
+  <hr />
+  <header style="text-align: center;">
+    <img src="{{ url_for('static', filename='img/logo_hoyo.png') }}" width="500" height="200"
+      style="border-radius: 50%;" />
+  </header>
+  <hr />
+  <article style="text-align: center;">
+    <h2>Tentang HoYoverse</h2>
+    <p>
+      HoYoverse adalah perusahaan pengembang game dan studio animasi yang berbasis di Shanghai, Tiongkok. Perusahaan ini <br>
+      didirikan pada tahun 2012 oleh tiga mahasiswa Universitas Jiao Tong, Shanghai. HoYoverse dikenal sebagai <br>
+      pengembang game populer seperti Genshin Impact, Honkai: Star Rail, Honkai Impact 3rd, Tears of Themis, dan Zenless Zone Zero.
+    </p>
+  </article>
+  <div style="max-width: 600px; margin: 3em auto;">
+    <table border="1" width="100%">
+      <thead>
+        <tr>
+          <th colspan="2">HOYOVERSE CHARACTER</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <ul>
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/hutao.jpg') }}" />Hu Tao
+              </li class="item">
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/acheron.jpg') }}" />Mei
+              </li>
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/herta.jpg') }}" />Herta
+              </li>
+            </ul>
+          </td>
+          <td>
+            <ul>
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/miyabi.jpg') }}" />Miyabi
+              </li>
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/sparkle.jpg') }}" />Sparkle
+              </li>
+              <li class="item">
+                <img src="{{ url_for('static', filename='img/furina.jpg') }}" />Furina
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <footer style="text-align: center;">
+      <p>Copyright &copy; COGNOSPHERE All Right Reserved</p>
+    </footer>
+  </div>
+</body>
+</html>
