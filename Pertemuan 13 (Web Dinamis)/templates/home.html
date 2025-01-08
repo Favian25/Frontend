@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>WUTHERING WAVES</title>
+</head>
+<body>
+    <nav>
+        <a href="main">Home</a>
+        <a href="">Contact</a>
+        <a href="">About Me</a>
+    </nav>
+    <header style="text-align: center;">
+        <img src="{{ url_for('static', filename='img/logo_wuwa.png') }}">
+    </header>
+    <hr />
+    <article style="text-align: center;">
+        <h2>Tentang Wuthering Waves</h2>
+        <p>
+            Wuthering Waves berlatarkan dunia pasca-apokaliptik futuristik setelah bencana yang disebut Lament memusnahkan <br>
+            sebagian besar umat manusia dan menyebabkan munculnya makhluk dan monster tak dikenal yang disebut Tacet Discords. <br>
+            Namun, umat manusia segera beradaptasi dengan ancaman tersebut dan seiring berjalannya waktu membangun kembali <br>
+            peradaban. Ceritanya mengikuti Rover yang amnesia yang terbangun dari tidur nyenyaknya dan berangkat menjelajahi dunia baru ini.
+        </p>
+     </article>
+    <div style="max-width: 600px; margin: 3em auto">
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th colspan="2">Character Wuthering Waves</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in container %}
+                <tr>
+                    <td>
+                        <ul>{{ row[3] }}</ul>
+                    </td>
+                    <td>
+                        <ul class="item"><img src="{{ url_for('static', filename='img/' + row[4]) }}"/></ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <hr/>
+    
+    <footer style="text-align: center;">
+        <p>Copyright &copy; STIKOM PGRI Banyuwangi</p>
+    </footer>    
+</body>
+</html>
